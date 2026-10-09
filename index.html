@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Adi and Jake's LIS 500 website exploring technology, identity, and power.">
+  <title>Home | Adi &amp; Jake — LIS 500</title>
+  <link rel="stylesheet" href="stylepage.css">
+</head>
+
+<body>
+  <!--
+    CODING CHOICES — AG / JD
+
+    This homepage introduces the website before visitors explore the longer
+    pages. The layout uses a header, navigation, main content, and footer
+    because these HTML elements describe the purpose of each area. All
+    appearance rules are stored in stylepage.css so the pages share one
+    consistent design. The black background and green accents create a
+    simple Matrix-inspired theme without needing animation or JavaScript.
+    The decorative binary text is hidden from screen readers because it
+    does not communicate information. The skip link lets keyboard users
+    move directly to the main content. Navigation labels stay the same
+    throughout the site, and aria-current identifies the active page.
+    Descriptive links explain where visitors will go. The introduction
+    remains short so the homepage works as a starting point rather than
+    repeating everything on the other pages.
+  -->
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">ADI + JAKE / LIS 500</p>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="resources.html">Implicit Bias Guide</a></li>
+          <li><a href="heroes.html">Tech Hero</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <p class="binary" aria-hidden="true">
+        01001100 01001001 01010011 00110101 00110000 00110000
+      </p>
+
+      <p class="eyebrow">WELCOME TO OUR PROJECT</p>
+      <h1 id="welcome-title">Code. People. Power.</h1>
+
+      <p class="intro">
+        Technology is part of our everyday lives. But who builds it,
+        whose experiences shape it, and who gets left out?
+      </p>
+
+      <p>
+        We’re Adi Govil and Jake Derfel, two students at UW–Madison.
+        This website brings together what we are learning in LIS 500
+        about technology, identity, and inequality. We want to think
+        more carefully about the choices behind the tools we use
+        and the tools we might build in the future.
+      </p>
+
+      <a class="button" href="resources.html">Explore the resource guide</a>
+    </section>
+
+    <section aria-labelledby="explore-title">
+      <h2 id="explore-title">Explore our site</h2>
+
+      <div class="cards">
+        <article class="card">
+          <p class="eyebrow">01 / INTRODUCTIONS</p>
+          <h3>About Us</h3>
+          <p>
+            Meet the students behind this project and learn how our
+            backgrounds connect to our interest in technology.
+          </p>
+          <a href="about.html">Meet Adi and Jake</a>
+        </article>
+
+        <article class="card">
+          <p class="eyebrow">02 / START LEARNING</p>
+          <h3>Implicit Bias Guide</h3>
+          <p>
+            Explore intersectionality, implicit bias, and bias testing
+            through explanations and examples from college life.
+          </p>
+          <a href="resources.html">Read the guide</a>
+        </article>
+
+        <article class="card">
+          <p class="eyebrow">03 / CHALLENGING NORMS</p>
+          <h3>Our Tech Hero</h3>
+          <p>
+            Learn about Calendly founder Tope Awotona and consider
+            what his story tells us about opportunity in technology.
+          </p>
+          <a href="heroes.html">Discover Tope’s story</a>
+        </article>
+      </div>
+    </section>
+
+    <aside class="reflection" aria-labelledby="question-title">
+      <h2 id="question-title">A question we’re bringing to LIS 500</h2>
+      <p>
+        If a tool works well for us, how do we find out whether it
+        works equally well for people with different experiences?
+      </p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Adi Govil &amp; Jake Derfel · UW–Madison · LIS 500 · Fall 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
