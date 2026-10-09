@@ -1,16 +1,21 @@
 /*
   SHARED STYLES — AG / JD
 
-  Every HTML page links to this stylesheet. The design uses a black
-  background, pale body text, and green headings for a simple
-  Matrix-inspired appearance. Monospace headings suggest a terminal,
-  while a standard sans-serif body font keeps longer paragraphs
-  comfortable to read. Layouts use flexible grids and one media query
-  instead of JavaScript. Links remain underlined, the current page
-  receives a visible border, and keyboard focus has a clear outline.
-  There are no flashing effects, moving backgrounds, or autoplay media.
-  Spacing and a maximum content width keep text from stretching across
-  the entire screen.
+  This stylesheet controls the appearance of all four HTML pages.
+  Color variables keep the dark background, green accents, and
+  light text consistent while making future changes easier.
+  Monospace headings give the website a simple terminal appearance,
+  while the body uses a sans-serif font for longer paragraphs.
+  The main container has a percentage width and a maximum width
+  so content can adapt to different screens. CSS Grid arranges
+  the biographies and Tech Hero content into columns. A media
+  query switches these layouts to one column on smaller screens.
+  Navigation links wrap when necessary, and the current page
+  receives a visible border. Focus outlines help keyboard users
+  identify selected links and the expandable question. Some
+  selectors remain from earlier page elements, including binary
+  text, homepage cards, and the guide contents list. Those rules
+  have no visible effect unless matching elements appear in HTML.
 */
 
 /* Base colors and reusable values for the entire site. */
