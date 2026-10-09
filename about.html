@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Meet Adi Govil and Jake Derfel, students in LIS 500 at UW–Madison.">
+  <title>About Us | Adi &amp; Jake — LIS 500</title>
+  <link rel="stylesheet" href="stylepage.css">
+</head>
+
+<body>
+  <!--
+    CODING CHOICES — AG / JD
+
+    This page gives each person a separate article so visitors can easily
+    distinguish between the two introductions. Both articles use the same
+    heading level and visual treatment to give the profiles equal emphasis.
+    The shared stylesheet places the articles next to each other on wider
+    screens and stacks them on smaller screens. This avoids fixed widths
+    that could make the text difficult to read on phones. The biographies
+    remain in the HTML instead of being inserted with JavaScript, which
+    keeps the page simple to maintain. Paragraphs separate academic
+    information, personal interests, and reasons for taking the course.
+    A final section explains the connection between our studies and the
+    website. The navigation and footer match the other pages so visitors
+    do not have to learn a different layout as they move around.
+  -->
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">ADI + JAKE / LIS 500</p>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About Us</a></li>
+          <li><a href="resources.html">Implicit Bias Guide</a></li>
+          <li><a href="heroes.html">Tech Hero</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <header class="page-heading">
+      <p class="eyebrow">THE PEOPLE BEHIND THE PROJECT</p>
+      <h1>About Us</h1>
+      <p class="intro">
+        Two UW–Madison seniors learning how code connects to
+        the world around us.
+      </p>
+    </header>
+
+    <div class="profiles">
+      <article class="card">
+        <h2>Adi Govil</h2>
+        <p class="profile-detail">Data Science &amp; Information Science</p>
+
+        <p>
+          My name is Adi Govil, and I am an international senior at
+          UW–Madison studying data science and information science.
+          My parents are ethnically Indian, but I grew up in Indonesia
+          before coming to the United States for university.
+        </p>
+
+        <p>
+          Outside of school, I enjoy spending time with friends,
+          watching movies, travelling, and trying new types of food.
+          Growing up in Indonesia and then studying in the United
+          States has given me different perspectives on the places
+          and communities I am part of.
+        </p>
+
+        <p>
+          One of the main reasons I joined LIS 500 is that I want to
+          apply what I learn in my future career as a data analyst.
+          I want to understand how decisions involving data can
+          affect people and how I can approach that responsibility
+          more thoughtfully.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Jake Derfel</h2>
+        <p class="profile-detail">Data Science</p>
+
+        <p>
+          I’m Jake Derfel, and I am a senior at UW–Madison studying
+          data science. I am originally from Chicago and plan to
+          move back to the city to work full time after graduation.
+        </p>
+
+        <p>
+          In my free time, I love playing tennis and pickleball,
+          going on runs, listening to music, and hanging out with
+          friends and family. A fun fact about me is that I am an
+          extra in a small Chicago-based movie.
+        </p>
+
+        <p>
+          I joined LIS 500 because I want to gain a more complete
+          understanding of code and power before I graduate.
+          As someone studying data science, I want to think about
+          both how technology works and how it affects the people
+          who use it.
+        </p>
+      </article>
+    </div>
+
+    <section class="reflection" aria-labelledby="shared-title">
+      <h2 id="shared-title">What connects our interests?</h2>
+      <p>
+        We both study data science and expect technology to be part
+        of our future careers. This class gives us a reason to pause
+        and ask questions that a technical assignment might not
+        always bring up. Who is represented in a dataset? Who gets
+        to make design decisions? How could a system treat people
+        differently even when its creators intend to be fair?
+      </p>
+      <p>
+        Our goal for this project is to make those questions
+        approachable for other students who are starting to
+        explore them.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Adi Govil &amp; Jake Derfel · UW–Madison · LIS 500 · Fall 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
