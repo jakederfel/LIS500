@@ -13,18 +13,20 @@
   <!--
     CODING CHOICES — AG / JD
 
-    This page gives each person a separate article so visitors can easily
-    distinguish between the two introductions. Both articles use the same
-    heading level and visual treatment to give the profiles equal emphasis.
-    The shared stylesheet places the articles next to each other on wider
-    screens and stacks them on smaller screens. This avoids fixed widths
-    that could make the text difficult to read on phones. The biographies
-    remain in the HTML instead of being inserted with JavaScript, which
-    keeps the page simple to maintain. Paragraphs separate academic
-    information, personal interests, and reasons for taking the course.
-    A final section explains the connection between our studies and the
-    website. The navigation and footer match the other pages so visitors
-    do not have to learn a different layout as they move around.
+    The About Us page uses two article elements to separate our
+  biographies while keeping both introductions equally prominent.
+  Each name is an h2 heading beneath the main h1 page heading,
+  creating a clear heading structure. Both articles use the same
+  card class so their backgrounds, borders, and spacing match.
+  The profiles container uses CSS Grid to display the biographies
+  beside each other on wider screens. The stylesheet changes this
+  to one column on smaller screens so the paragraphs have enough
+  room. Each biography has separate paragraphs for background,
+  interests, and reasons for taking LIS 500. A reflection section
+  below the profiles explains our shared interests. Its
+  aria-labelledby attribute connects the section to its heading.
+  The shared navigation includes an active page indicator, and the
+  skip link gives keyboard users direct access to the main content.
   -->
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
