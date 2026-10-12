@@ -148,6 +148,7 @@ summary:focus-visible {
   display: block;
   padding: 0.6rem 0.8rem;
   border: 1px solid transparent;
+  text-decoration: none;
 }
 
 .site-header nav a:hover,
@@ -164,7 +165,6 @@ summary:focus-visible {
 .welcome {
   padding: 2rem 0 3rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .binary {
@@ -359,7 +359,6 @@ figcaption {
   padding: 1.5rem 0;
   color: var(--muted);
   background: var(--panel);
-  border-top: 1px solid var(--border);
   font-size: 0.9rem;
 }
 
