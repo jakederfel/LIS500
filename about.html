@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +15,19 @@
     CODING CHOICES — AG / JD
 
     The About Us page uses two article elements to separate our
-  biographies while keeping both introductions equally prominent.
-  Each name is an h2 heading beneath the main h1 page heading,
-  creating a clear heading structure. Both articles use the same
-  card class so their backgrounds, borders, and spacing match.
-  The profiles container uses CSS Grid to display the biographies
-  beside each other on wider screens. The stylesheet changes this
-  to one column on smaller screens so the paragraphs have enough
-  room. Each biography has separate paragraphs for background,
-  interests, and reasons for taking LIS 500. A reflection section
-  below the profiles explains our shared interests. Its
-  aria-labelledby attribute connects the section to its heading.
-  The shared navigation includes an active page indicator, and the
-  skip link gives keyboard users direct access to the main content.
+    biographies while keeping both introductions equally prominent.
+    Each name is an h2 heading beneath the main h1 page heading,
+    creating a clear heading structure. Both articles use the same
+    card class so their backgrounds, borders, and spacing match.
+    The profiles container uses CSS Grid to display the biographies
+    beside each other on wider screens. The stylesheet changes this
+    to one column on smaller screens so the paragraphs have enough
+    room. Each biography has separate paragraphs for background,
+    interests, and reasons for taking LIS 500. A reflection section
+    below the profiles explains our shared interests. Its
+    aria-labelledby attribute connects the section to its heading.
+    The shared navigation includes an active page indicator, and the
+    skip link gives keyboard users direct access to the main content.
   -->
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -55,6 +56,12 @@
       <article class="card">
         <h2>Adi Govil</h2>
 
+        <img src="adi.jpg"
+             alt="Headshot of Adi Govil"
+             width="200"
+             height="200"
+             style="display: block; max-width: 100%; object-fit: cover; border: none; margin: 15px 0 20px;">
+
         <p>
           My name is Adi Govil, and I am an international senior at
           UW–Madison studying data science and information science.
@@ -81,6 +88,12 @@
 
       <article class="card">
         <h2>Jake Derfel</h2>
+
+        <img src="jake.jpg"
+             alt="Headshot of Jake Derfel"
+             width="200"
+             height="200"
+             style="display: block; max-width: 100%; object-fit: cover; border: none; margin: 15px 0 20px;">
 
         <p>
           I’m Jake Derfel, and I am a senior at UW–Madison studying
@@ -130,3 +143,4 @@
   </footer>
 </body>
 </html>
+
