@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,20 +15,23 @@
     CODING CHOICES — AG / JD
 
     The Tech Hero page introduces Tope Awotona with an h1 heading
-  and a short line identifying his connection to Calendly. The
-  hero-layout container places the photograph beside the biography
-  on wider screens using CSS Grid. On smaller screens, the
-  stylesheet stacks these elements into one column. The image
-  loads from the University of Georgia website and includes
-  alternative text identifying its subject. Its width and height
-  attributes provide dimensions, while CSS lets it resize with
-  its container and retain its proportions. The biography uses
-  an article element with separate paragraphs to keep the profile
-  readable and below the assignment's word limit. A section below
-  the profile provides a link to Calendly's About page for further
-  information. Shared navigation and an active page indicator help
-  visitors move between pages. All visual styling comes from the
-  external stylesheet.
+    and a short line identifying his connection to Calendly.
+    The hero-layout container places the photograph beside the
+    biography on wider screens using CSS Grid. On smaller screens,
+    the stylesheet stacks these elements into one column.
+
+    The image loads from the University of Georgia website and
+    includes alternative text identifying its subject. Its width
+    and height attributes provide dimensions, while CSS lets it
+    resize with its container and retain its proportions.
+
+    The biography uses an article element with separate paragraphs
+    to keep the profile readable. The additional Calendly resource
+    appears directly below the biography in the same column.
+
+    Shared navigation and an active page indicator help visitors
+    move between pages. All visual styling comes from the
+    external stylesheet.
   -->
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -48,12 +52,14 @@
   </header>
 
   <main id="main-content" class="container">
+
     <header class="page-heading">
       <h1>Tope Awotona</h1>
       <p class="intro">Founder of Calendly</p>
     </header>
 
     <div class="hero-layout">
+
       <figure>
         <img
           class="hero-photo"
@@ -61,7 +67,6 @@
           alt="Tope Awotona, founder of Calendly"
           width="1024"
           height="768">
-        
       </figure>
 
       <article class="hero-profile">
@@ -111,19 +116,22 @@
           to question the barriers facing founders who
           lack that financial cushion.
         </p>
+
+        <section aria-labelledby="sources-title">
+          <h2 id="sources-title">Learn more about Tope</h2>
+
+          <ul class="resource-list">
+            <li>
+              <a href="https://calendly.com/about">
+                Calendly: About the Company
+              </a>
+            </li>
+          </ul>
+        </section>
+
       </article>
     </div>
 
-    <section>
-      <h2 id="sources-title">Learn more about Tope</h2>
-
-      <ul class="resource-list">
-        <li>
-          <a href="https://calendly.com/about">
-            Calendly: About the Company
-          </a>
-      </ul>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -131,5 +139,6 @@
       <p>Adi Govil &amp; Jake Derfel · UW–Madison · LIS 500 · Fall 2026</p>
     </div>
   </footer>
+
 </body>
 </html>
