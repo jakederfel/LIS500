@@ -23,11 +23,17 @@
     beside each other on wider screens. The stylesheet changes this
     to one column on smaller screens so the paragraphs have enough
     room. Each biography has separate paragraphs for background,
-    interests, and reasons for taking LIS 500. A reflection section
-    below the profiles explains our shared interests. Its
-    aria-labelledby attribute connects the section to its heading.
-    The shared navigation includes an active page indicator, and the
-    skip link gives keyboard users direct access to the main content.
+    interests, and reasons for taking LIS 500.
+
+    Headshots are placed below each name and above each biography.
+    The images use descriptive alternative text and inline styling
+    to maintain consistent dimensions without image borders.
+
+    A reflection section below the profiles explains our shared
+    interests. Its aria-labelledby attribute connects the section
+    to its heading. The shared navigation includes an active page
+    indicator, and the skip link gives keyboard users direct access
+    to the main content.
   -->
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -53,10 +59,11 @@
     </header>
 
     <div class="profiles">
+
       <article class="card">
         <h2>Adi Govil</h2>
 
-        <img src="adi.jpg"
+        <img src="adi.png"
              alt="Headshot of Adi Govil"
              width="200"
              height="200"
@@ -89,7 +96,7 @@
       <article class="card">
         <h2>Jake Derfel</h2>
 
-        <img src="jake.jpg"
+        <img src="jake.png"
              alt="Headshot of Jake Derfel"
              width="200"
              height="200"
@@ -116,10 +123,12 @@
           who use it.
         </p>
       </article>
+
     </div>
 
     <section class="reflection" aria-labelledby="shared-title">
       <h2 id="shared-title">What connects our interests?</h2>
+
       <p>
         We both study data science and expect technology to be part
         of our future careers. This class gives us a reason to pause
@@ -128,6 +137,7 @@
         to make design decisions? How could a system treat people
         differently even when its creators intend to be fair?
       </p>
+
       <p>
         Our goal for this project is to make those questions
         approachable for other students who are starting to
@@ -141,6 +151,7 @@
       <p>Adi Govil &amp; Jake Derfel · UW–Madison · LIS 500 · Fall 2026</p>
     </div>
   </footer>
+
 </body>
 </html>
 
