@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adi and Jake reflect on their 240-image Teachable Machine project and lessons from Unmasking AI.">
+  <title>Project Statement | Adi &amp; Jake — LIS 500</title>
+  <link rel="stylesheet" href="stylepage.css?v=tm1">
+</head>
+
+<body>
+  <!--
+    CODING CHOICES — AG / JD
+
+    This page holds our longer project statement separately from the live
+    camera demonstration. We used the same header, navigation, footer, and
+    stylesheet as the other pages so visitors can move through one consistent
+    website. The reading-page class limits the width of the paragraphs, which
+    makes a long statement easier to read. One h1 introduces the page, and h2
+    headings divide the statement into topics. Each section uses the existing
+    guide-section class for spacing and borders. The image counts appear in a
+    list so each person's contribution is easy to find. Numbered links connect
+    source-based explanations to the references at the bottom. The return link
+    takes visitors back to the working classifier. The skip link allows keyboard
+    users to reach the main content directly. This page needs no JavaScript or
+    camera access because it only presents our writing. All visual styling stays
+    in stylepage.css instead of being added to individual HTML elements.
+  -->
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">ADI + JAKE / LIS 500</p>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="resources.html">Implicit Bias Guide</a></li>
+          <li><a href="heroes.html">Tech Hero</a></li>
+          <li><a href="machine.html">Teachable Machine</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container reading-page">
+    <header class="page-heading">
+      <h1>Our Teachable Machine Project Statement</h1>
+      <p class="intro">What 240 images taught us about building and questioning a model.</p>
+      <p><strong>Group members:</strong> Adi Govil and Jake Derfel</p>
+    </header>
+
+    <p><a href="machine.html">Back to our Teachable Machine project</a></p>
+
+    <article id="statement-text" aria-label="Joint project statement">
+      <section class="guide-section">
+        <h2>Our first working image classifier</h2>
+        <p>
+          For this project, we trained an image classifier to distinguish between
+          mugs, bottles, and scenes without either object. We used Google Teachable
+          Machine to train the model and added it to our LIS 500 website. This was
+          our first time creating and training a working machine learning model
+          using examples that we collected ourselves. Seeing it recognize an
+          object in front of the camera made the ideas from class feel much more
+          concrete. We could see a connection between the images we supplied and
+          the predictions appearing on our webpage.
+        </p>
+        <p>
+          We were excited that the model worked well in our trials, but the activity
+          also gave us a reason to question what that success meant. A working
+          demonstration shows that a model can perform a particular task under
+          some conditions. We still need to explain those conditions and pay
+          attention when the behavior changes. Connecting this experience to
+          Joy Buolamwini's <cite>Unmasking AI</cite> helped us think about our
+          responsibility as the people choosing the examples and presenting the results.
+        </p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Our dataset and contributions</h2>
+        <p>
+          We collected 240 original images altogether. Both of us contributed
+          images to all three classes:
+        </p>
+        <ul class="spaced-list">
+          <li><strong>Adi Govil:</strong> 40 mug images, 40 bottle images, and 40 empty-scene images, for 120 total.</li>
+          <li><strong>Jake Derfel:</strong> 40 mug images, 40 bottle images, and 40 empty-scene images, for 120 total.</li>
+          <li><strong>Combined:</strong> 80 mug images, 80 bottle images, and 80 empty-scene images, for 240 total.</li>
+        </ul>
+        <p>
+          Each of us therefore contributed more than the required 100 original
+          samples. Our custom training images came from us rather than downloaded
+          or generated images. The Empty class represented scenes without either
+          target object. Giving the model those examples allowed us to include
+          removing the object as part of the demonstration.
+        </p>
+        <p>
+          Equal class counts made our dataset balanced in one clear way. However,
+          the counts do not show how much variety the images contain. Our object
+          images showed the mugs and bottles centered and large in the frame.
+          Even with 80 examples of each class, we were teaching the model through
+          a fairly specific view of those objects. This became important when
+          we tried changing the distance from the camera.
+        </p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Training and connecting the model</h2>
+        <p>
+          Teachable Machine made the training process much easier than we expected.
+          We were especially surprised by how quickly it trained with our 240
+          images. We did not record an exact training time, but the process felt
+          efficient and approachable for a first project. We could organize our
+          examples, train the model, and see its predictions without first
+          learning how to build a neural network ourselves.
+        </p>
+        <p>
+          Our webpage follows Daniel Shiffman's Coding Train example: load an
+          exported model, classify camera images, receive a result, and display
+          the label. The tutorial uses p5.js and ml5.js to connect these parts.
+          <a href="#source-coding-train" aria-label="Reference 1: The Coding Train">[1]</a>
+          We adapted that structure for our model and website. The Start and Stop
+          buttons let visitors control the camera, and the prediction appears as
+          regular webpage text as well as on the canvas.
+        </p>
+        <p>
+          Google's explanation of transfer learning helps explain why this process
+          can be fast. Teachable Machine reuses features learned by a pretrained
+          model and trains a classifier for the new examples.
+          <a href="#source-transfer" aria-label="Reference 2: Google transfer learning guide">[2]</a>
+          Our 240 examples were original, but the system did not learn everything
+          from scratch using only those images. The assigned MobileNets paper
+          describes efficient neural networks designed for devices with limited
+          computing resources.
+          <a href="#source-mobilenet" aria-label="Reference 3: MobileNets paper">[3]</a>
+          These resources helped us appreciate the existing research behind
+          something that seemed so simple to use.
+        </p>
+      </section>
+
+      <section class="guide-section">
+        <h2>What we observed</h2>
+        <p>
+          In our informal trials, the model distinguished the objects well even
+          when the lighting was not very bright, as long as the object remained
+          clearly visible. We found this encouraging because the demonstration
+          did not seem to require especially bright lighting to work. However,
+          we did not measure light levels or conduct a controlled lighting study.
+          Our observation describes the situations we tried, rather than every
+          possible dim setting.
+        </p>
+        <p>
+          Distance was the main factor we noticed affecting the predictions.
+          Objects shown farther from the camera were less reliably recognized.
+          Our explanation is that the centered, large objects in our training
+          images made close-up views more familiar to the model. Moving an object
+          farther away changes how much of the image it occupies and how much
+          background surrounds it. This is a plausible explanation, but our
+          informal testing does not prove the exact cause.
+        </p>
+        <p>
+          We added instructions asking visitors to hold the object closer to the
+          camera. That helps people use the current model under conditions similar
+          to its training examples. It also leaves us with an improvement to make:
+          collecting examples at more distances and checking whether a revised
+          model handles them better. Updating the instructions did not change
+          what the existing model learned.
+        </p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Connecting our choices to Unmasking AI</h2>
+        <p>
+          Buolamwini's idea of the coded gaze describes how discrimination and
+          exclusion can become embedded in technology. Her work asks us to look
+          at the people and decisions behind systems that may appear neutral.
+          <a href="#source-book" aria-label="Reference 4: Unmasking AI">[4]</a>
+          Our project made the role of human choices easier to understand. We
+          chose the labels, supplied the images, and decided which views of an
+          object appeared in the training data. The model's limitations encouraged
+          us to examine those choices instead of treating every unexpected result
+          as an unexplained computer mistake.
+        </p>
+        <p>
+          A different connection appears in the opening chapter of
+          <cite>Unmasking AI</cite>. Buolamwini describes her early curiosity about
+          computers and learning HTML and CSS before moving toward other programming
+          and robotics projects.
+          <a href="#source-excerpt" aria-label="Reference 5: Unmasking AI chapter excerpt">[5]</a>
+          That progression felt relevant to this assignment. We started by building
+          a website and are now using it to share a machine learning experiment.
+          Being beginners does not prevent us from making something useful or
+          asking serious questions about how it works.
+        </p>
+        <p>
+          Our mug and bottle classifier does not measure racial or gender bias,
+          and its mistakes have very different consequences from errors in systems
+          that evaluate people. Still, the exercise gave us practice noticing
+          assumptions we had built into a dataset. In future projects involving
+          people, we would need to ask whose experiences our examples represent
+          and who could be harmed by an incorrect decision.
+        </p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Looking beyond a successful demonstration</h2>
+        <p>
+          Buolamwini and Timnit Gebru's <cite>Gender Shades</cite> study provides
+          a useful research connection. They evaluated commercial gender
+          classification systems across combinations of skin tone and gender,
+          finding substantial differences in performance between groups.
+          <a href="#source-gender-shades" aria-label="Reference 6: Gender Shades">[6]</a>
+          This shows why intersectional evaluation matters: a broad description
+          of performance can leave important differences out of view. We should
+          ask which groups are represented in an evaluation and whose errors
+          become harder to see in a summary.
+        </p>
+        <p>
+          For our much smaller experiment, the practical takeaway is to describe
+          performance under different conditions. Saying that our model works
+          well would leave out the distance problem. Likewise, equal numbers of
+          images in each class do not guarantee that the model has learned enough
+          variation within those classes. We need to look beyond the total number
+          of examples and consider what those examples actually show.
+        </p>
+        <p>
+          We have not established an overall accuracy percentage through a formal
+          test. The score displayed beside a prediction is the model's score for
+          that label, not a measured success rate across new images. The model
+          also chooses among our three classes; an unfamiliar object can still
+          receive one of those labels. A confident answer should give us a
+          reason to check the result, rather than a reason to stop questioning it.
+        </p>
+      </section>
+
+      <section class="guide-section">
+        <h2>What we would improve and take forward</h2>
+        <p>
+          Our next improvement would be collecting new images with objects at
+          different distances and positions. We would also include more variation
+          in backgrounds and lighting. To evaluate whether those changes help,
+          we would keep separate test images out of training and compare the
+          original and revised models on the same examples. Recording the expected
+          and predicted labels would let us describe errors more clearly than
+          relying on memory from a live demonstration. These are proposed next
+          steps, rather than tests we have already completed.
+        </p>
+        <p>
+          We are proud that our first model works and that both of us contributed
+          equally to the original dataset. The speed and ease of Teachable Machine
+          made us more interested in experimenting with machine learning. At the
+          same time, the distance issue gave us a concrete lesson about the
+          relationship between training examples and performance. As students
+          studying data science, we want to carry that habit of questioning our
+          data into future work. Building a model includes explaining its limits,
+          listening when people report problems, and being willing to change the
+          choices that produced those problems.
+        </p>
+      </section>
+    </article>
+
+    <section class="guide-section" aria-labelledby="references-title">
+      <h2 id="references-title">References</h2>
+      <ol class="resource-list">
+        <li id="source-coding-train">
+          Daniel Shiffman / The Coding Train.
+          <a href="https://thecodingtrain.com/tracks/teachable-machine/teachable-machine/1-image-classification">Teachable Machine 1: Image Classification</a>.
+          Tutorial and source code used for the camera classifier.
+        </li>
+        <li id="source-transfer">
+          Google Codelabs.
+          <a href="https://codelabs.developers.google.com/tensorflowjs-transfer-learning-teachable-machine">TensorFlow.js: Make your own Teachable Machine using transfer learning</a>.
+          Additional technical explanation of pretrained models and custom examples.
+        </li>
+        <li id="source-mobilenet">
+          Andrew G. Howard and colleagues. (2017).
+          <a href="https://arxiv.org/abs/1704.04861">MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a>.
+        </li>
+        <li id="source-book">
+          Joy Buolamwini. (2023).
+          <a href="https://www.unmasking.ai/"><cite>Unmasking AI: My Mission to Protect What Is Human in a World of Machines</cite></a>.
+          Random House. Link to the author's book website.
+        </li>
+        <li id="source-excerpt">
+          Joy Buolamwini. (2023).
+          <a href="https://penguinrandomhousehighereducation.com/2023/11/08/excerpt-from-unmasking-ai/">Chapter 1 excerpt from <cite>Unmasking AI</cite></a>.
+          Published by Penguin Random House Higher Education.
+        </li>
+        <li id="source-gender-shades">
+          Joy Buolamwini and Timnit Gebru. (2018).
+          <a href="https://proceedings.mlr.press/v81/buolamwini18a.html">Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification</a>.
+          Proceedings of Machine Learning Research, 81, 77–91.
+          Additional research connection.
+        </li>
+      </ol>
+      <p><a href="https://github.com/jakederfel/LIS500">Our website code on GitHub</a></p>
+      <p><a href="https://teachablemachine.withgoogle.com/models/scoxiocVK/">Our exported Teachable Machine model</a></p>
+      <p><a href="machine.html">Return to the model and project materials</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Adi Govil &amp; Jake Derfel · UW–Madison · LIS 500 · Fall 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
