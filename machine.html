@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adi and Jake's Teachable Machine classifier for mugs, bottles, and empty scenes.">
+  <title>Teachable Machine | Adi &amp; Jake — LIS 500</title>
+  <link rel="stylesheet" href="stylepage.css?v=tm1">
+</head>
+<body>
+  <!--
+    CODING CHOICES — AG / JD
+
+    This page adds our Teachable Machine model to the existing website.
+    We reused the same header, footer, navigation, colors, and reading
+    width so it feels like another part of our project. The camera
+    demonstration is placed near the top so visitors can try it before
+    reading the explanation. A named container holds the p5 canvas within
+    the main content. The Start and Stop buttons let visitors decide when
+    to give the page access to their camera. The prediction is repeated
+    as ordinary HTML text because text drawn on a canvas is harder for
+    assistive technology to read. Status messages explain loading and
+    camera problems. The script uses the exact labels from our exported
+    model instead of renaming its output. All page styling is kept in
+    stylepage.css. The references credit the Coding Train example that
+    we adapted, and the remaining project materials are identified clearly.
+  -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">ADI + JAKE / LIS 500</p>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="resources.html">Implicit Bias Guide</a></li>
+          <li><a href="heroes.html">Tech Hero</a></li>
+          <li><a href="machine.html" aria-current="page">Teachable Machine</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container reading-page">
+    <header class="page-heading">
+      <h1>Can We Teach a Machine?</h1>
+      <p class="intro">An image classifier for mugs, bottles, and empty scenes.</p>
+      <p><strong>Group members:</strong> Adi Govil and Jake Derfel</p>
+    </header>
+
+    <section aria-labelledby="try-title">
+      <h2 id="try-title">Try our model</h2>
+      <p>Select Start camera and allow camera access. Hold a mug or bottle in view,
+      then remove it to try the Empty class. Try changing the angle, distance,
+      or lighting and watch what happens to the prediction.</p>
+      <div class="tm-controls">
+        <button class="button" type="button" id="start-camera">Start camera</button>
+        <button class="button" type="button" id="stop-camera" disabled>Stop camera</button>
+      </div>
+      <p id="model-status" role="status">Loading the camera code...</p>
+      <div id="camera-container"></div>
+      <p class="tm-result">Prediction: <strong id="prediction">Not running</strong></p>
+      <p>Model score: <span id="confidence">—</span></p>
+      <p class="tm-note">The score shows the model's confidence in its chosen label.
+      It is not a measured accuracy rate. The model can be confident and still
+      choose the wrong class.</p>
+      <noscript><p>Enable JavaScript to use the live classifier.</p></noscript>
+      <details>
+        <summary>What happens to my camera video?</summary>
+        <p>The classifier processes frames in your browser. Our page does not
+        record or upload your camera footage. It downloads the model and its
+        JavaScript libraries from external hosts. Stop camera turns off the
+        camera stream used by this page.</p>
+      </details>
+    </section>
+
+    <section class="guide-section">
+      <h2>What does the model recognize?</h2>
+      <ul class="spaced-list">
+        <li><strong>Mugs:</strong> The class trained with our mug images.</li>
+        <li><strong>Bottles:</strong> The class trained with our bottle images.</li>
+        <li><strong>Empty:</strong> The class for scenes without either target object.</li>
+      </ul>
+      <p>Our model chooses between these three labels. An unfamiliar object, or
+      both objects appearing together, can still receive one of these labels.
+      Empty is a training category, not proof that the model understands every
+      object that is absent from the picture.</p>
+    </section>
+
+    <section class="guide-section">
+      <h2>Our project</h2>
+      <p>We trained this image classifier using Google Teachable Machine and
+      connected the exported model to our LIS 500 website. The webpage adapts
+      the Coding Train example to show a live camera image and its predicted label.</p>
+      <p>Our experiment asks how the examples we select influence what a model
+      recognizes. We want to examine whether its predictions change when the
+      background, lighting, or position of an object changes. This connects to
+      our course discussions about the human choices behind automated systems.</p>
+      <p><a href="https://teachablemachine.withgoogle.com/models/scoxiocVK/">
+        Open our model on Teachable Machine
+      </a></p>
+    </section>
+
+    <section class="guide-section">
+      <h2>Dataset and group contributions</h2>
+      <p>Our original training images and each member's contribution counts will
+      be linked here. The exported model does not replace the assignment's
+      requirement to share the original samples.</p>
+      <!-- AG / JD: After publishing the actual dataset, replace the paragraph
+      above with the real counts and the link below. Change the URL if needed.
+      <p><a href="dataset.zip" download>Download our original training images</a></p>
+      -->
+    </section>
+
+    <section class="guide-section">
+      <h2>Demonstration video</h2>
+      <p>Our recording of the model in use will be added here. It will show each
+      class, a change in conditions, and a limitation we observed.</p>
+      <!-- AG / JD: Upload our real video and captions, then remove this comment
+      wrapper and replace the pending paragraph above.
+      <video class="tm-recording" controls preload="metadata">
+        <source src="media/demo.mp4" type="video/mp4">
+        <track kind="captions" src="media/demo.vtt" srclang="en" label="English" default>
+        Your browser does not support this video player.
+      </video>
+      -->
+    </section>
+
+    <section class="guide-section">
+      <h2>Project statement and testing</h2>
+      <p>Our final statement will connect our actual collection, training, and
+      testing experience to Joy Buolamwini's <cite>Unmasking AI</cite>. We will
+      include the results we observed rather than treating the model's score
+      as evidence of its accuracy.</p>
+      <!-- AG / JD: After editing and uploading statement.html, activate this link.
+      <p><a href="statement.html">Read our project statement</a></p>
+      -->
+    </section>
+
+    <section class="guide-section">
+      <h2>Code and references</h2>
+      <ul class="resource-list">
+        <li><a href="https://github.com/jakederfel/LIS500">Our website code on GitHub</a></li>
+        <li><a href="sketch.js">Our classifier JavaScript</a></li>
+        <li><a href="https://teachablemachine.withgoogle.com/models/scoxiocVK/">Our exported Teachable Machine model</a></li>
+        <li><a href="https://thecodingtrain.com/tracks/teachable-machine/teachable-machine/1-image-classification">The Coding Train: Image Classification</a></li>
+        <li><a href="https://editor.p5js.org/codingtrain/sketches/PoZXqbu4v">Daniel Shiffman's sample code</a></li>
+        <li><a href="https://www.unmasking.ai/">Joy Buolamwini: Unmasking AI</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Adi Govil &amp; Jake Derfel · UW–Madison · LIS 500 · Fall 2026</p>
+    </div>
+  </footer>
+
+  <!-- AG / JD: These versions support the tutorial's original callback syntax. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+  <script src="sketch.js?v=tm1"></script>
+</body>
+</html>
