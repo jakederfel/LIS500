@@ -61,13 +61,13 @@
       <div id="camera-container"></div>
       <p class="tm-result">Prediction: <strong id="prediction">Not running</strong></p>
       <p>Model score: <span id="confidence">—</span></p>
-      <p class="tm-note">The score shows the model's confidence in its chosen label.
+      <p class="tm-note">The score shows the model's confidence in its choice.
       It is not a measured accuracy rate. The model can be confident and still
       choose the wrong class.</p>
       <noscript><p>Enable JavaScript to use the live classifier.</p></noscript>
       <details>
         <summary>What happens to my camera video?</summary>
-        <p>The classifier processes frames in your browser. Our page does not
+        <p>The machine model processes frames in your browser. Our page does not
         record or upload your camera footage. It downloads the model and its
         JavaScript libraries from external hosts. Stop camera turns off the
         camera stream used by this page.</p>
@@ -103,13 +103,11 @@
 
     <section class="guide-section">
       <h2>Dataset and group contributions</h2>
-      <p>Our original training images and each member's contribution counts will
-      be linked here. The exported model does not replace the assignment's
-      requirement to share the original samples.</p>
-      <!-- AG / JD: After publishing the actual dataset, replace the paragraph
-      above with the real counts and the link below. Change the URL if needed.
-      <p><a href="dataset.zip" download>Download our original training images</a></p>
-      -->
+      <p>We collected 240 original training images. Adi contributed
+      40 mug images, 40 bottle images, and 40 empty-scene images.
+      Jake contributed the same amounts. Each member contributed
+      120 images, giving us 80 images per class. </p>
+      
     </section>
 
     <section class="guide-section">
@@ -127,15 +125,17 @@
     </section>
 
     <section class="guide-section">
-      <h2>Project statement and testing</h2>
-      <p>Our final statement will connect our actual collection, training, and
-      testing experience to Joy Buolamwini's <cite>Unmasking AI</cite>. We will
-      include the results we observed rather than treating the model's score
-      as evidence of its accuracy.</p>
-      <!-- AG / JD: After editing and uploading statement.html, activate this link.
-      <p><a href="statement.html">Read our project statement</a></p>
-      -->
-    </section>
+  <h2>Project statement and testing</h2>
+  <p>
+    Our joint statement discusses collecting 240 original images,
+    training our classifier, and observing how lighting and distance
+    affected its predictions. We connect this experience to
+    Joy Buolamwini's <cite>Unmasking AI</cite> and our course resources.
+  </p>
+  <p>
+    <a href="statement.html">Read our project statement</a>
+  </p>
+</section>
 
     <section class="guide-section">
       <h2>Code and references</h2>
