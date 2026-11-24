@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +12,16 @@
   <!--
     CODING CHOICES — AG / JD
 
-    This page adds our Teachable Machine model to the existing website.
+    This page adds our Teachable Machine model to our existing website.
     We reused the same header, footer, navigation, colors, and reading
-    width so it feels like another part of our project. The camera
-    demonstration is placed near the top so visitors can try it before
-    reading the explanation. A named container holds the p5 canvas within
-    the main content. The Start and Stop buttons let visitors decide when
-    to give the page access to their camera. The prediction is repeated
-    as ordinary HTML text because text drawn on a canvas is harder for
-    assistive technology to read. Status messages explain loading and
-    camera problems. The script uses the exact labels from our exported
-    model instead of renaming its output. All page styling is kept in
-    stylepage.css. The references credit the Coding Train example that
-    we adapted, and the remaining project materials are identified clearly.
+    width so it feels like another part of our project. We added numbered
+    steps and clearer headings to make the model easier to use.
+    The Start and Stop buttons allow visitors to control their camera.
+    The prediction is also shown as regular HTML text to make the
+    results more accessible. All page styling is kept in stylepage.css.
+    Our references credit the Coding Train example that we adapted.
   -->
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
@@ -37,7 +34,6 @@
           <li><a href="resources.html">Implicit Bias Guide</a></li>
           <li><a href="heroes.html">Tech Hero</a></li>
           <li><a href="machine.html" aria-current="page">Teachable Machine</a></li>
-          <!-- AG / JD: The project statement has its own navigation link. -->
           <li><a href="statement.html">Project Statement</a></li>
         </ul>
       </nav>
@@ -45,120 +41,263 @@
   </header>
 
   <main id="main-content" class="container reading-page">
+
     <header class="page-heading">
       <h1>Can We Teach a Machine?</h1>
-      <p class="intro">An image classifier for mugs, bottles, and empty scenes.</p>
+      <p class="intro">
+        Test our machine learning model by showing it a mug,
+        a bottle, or an empty scene.
+      </p>
       <p><strong>Group members:</strong> Adi Govil and Jake Derfel</p>
     </header>
 
     <section aria-labelledby="try-title">
-      <h2 id="try-title">Try our model</h2>
-      <p>Select Start camera and allow camera access. Hold a mug or bottle close to camera view,
-      then remove it to try the Empty class.</p>
+      <h2 id="try-title">Try It Yourself</h2>
+
+      <p>
+        Follow the three steps below to see if our machine
+        can correctly identify an object using your camera.
+      </p>
+
+      <!-- AG / JD: Numbered steps make the model easier to use. -->
+
+      <h3>Step 1: Start your camera</h3>
+
+      <p>
+        Click Start Camera and allow camera access when prompted.
+      </p>
+
       <div class="tm-controls">
-        <button class="button" type="button" id="start-camera">Start camera</button>
-        <button class="button" type="button" id="stop-camera" disabled>Stop camera</button>
+        <button class="button" type="button" id="start-camera">
+          Start Camera
+        </button>
+        <button class="button" type="button" id="stop-camera" disabled>
+          Stop Camera
+        </button>
       </div>
+
       <p id="model-status" role="status">Loading the camera code...</p>
+
+      <h3>Step 2: Show the camera an object</h3>
+
+      <p>
+        Hold a mug or bottle in front of your camera.
+        Then remove the object to see if the model recognizes
+        an empty scene.
+      </p>
+
       <div id="camera-container"></div>
-      <p class="tm-result">Prediction: <strong id="prediction">Not running</strong></p>
-      <p>Model score: <span id="confidence">—</span></p>
-      <p class="tm-note">The score shows the model's confidence in its choice.
-      It is not a measured accuracy rate. The model can be confident and still
-      choose the wrong class.</p>
-      <noscript><p>Enable JavaScript to use the live classifier.</p></noscript>
+
+      <h3>Step 3: Check your results</h3>
+
+      <p class="tm-result">
+        Prediction: <strong id="prediction">Not running</strong>
+      </p>
+
+      <p>Model confidence: <span id="confidence">—</span></p>
+
+      <p class="tm-note">
+        The confidence score tells you how certain the model is
+        about its prediction. A high score does not always mean
+        the prediction is correct.
+      </p>
+
+      <h3>Keep experimenting</h3>
+
+      <p>
+        Try changing the lighting, background, or angle of your
+        object. Does the model still make the same prediction?
+        Try showing it an object that is neither a mug nor a bottle.
+      </p>
+
+      <p>
+        <strong>When you are finished, select Stop Camera.</strong>
+      </p>
+
+      <noscript>
+        <p>Enable JavaScript to use the live classifier.</p>
+      </noscript>
+
       <details>
-        <summary>What happens to my camera video?</summary>
-        <p>The machine model processes frames in your browser. Our page does not
-        record or upload your camera footage. It downloads the model and its
-        JavaScript libraries from external hosts. Stop camera turns off the
-        camera stream used by this page.</p>
+        <summary>Is my camera footage private?</summary>
+        <p>
+          The machine model processes frames in your browser.
+          Our page does not record or upload your camera footage.
+          It downloads the model and its JavaScript libraries from
+          external hosts. Stop Camera turns off the camera stream
+          used by this page.
+        </p>
       </details>
     </section>
 
     <section class="guide-section">
-      <h2>What does the model recognize?</h2>
+      <h2>What Can Our Machine Recognize?</h2>
+
+      <p>Our model was trained to recognize three categories:</p>
+
       <ul class="spaced-list">
-        <li><strong>Mugs:</strong> The class trained with our mug images.</li>
-        <li><strong>Bottles:</strong> The class trained with our bottle images.</li>
-        <li><strong>Empty:</strong> The class for scenes without either target object.</li>
+        <li><strong>Mugs:</strong> Images containing a mug.</li>
+        <li><strong>Bottles:</strong> Images containing a bottle.</li>
+        <li><strong>Empty:</strong> Images without a mug or bottle.</li>
       </ul>
-      <p>Our model chooses between these three labels. An unfamiliar object, or
-      both objects appearing together, can still receive one of these labels.
-      Empty is a training category, not proof that the model understands every
-      object that is absent from the picture.</p>
+
+      <h3>What are its limitations?</h3>
+
+      <p>
+        Our model can only choose between these three labels.
+        If you show it an unfamiliar object or both objects at
+        the same time, it will still choose one of these labels.
+        The Empty category does not mean the machine understands
+        every other object.
+      </p>
     </section>
 
     <section class="guide-section">
-      <h2>Our project</h2>
-      <p>We trained this image classifier using Google Teachable Machine and
-      connected the exported model to our LIS 500 website. The webpage adapts
-      the Coding Train example to show a live camera image and its predicted label.</p>
-      <p>Our experiment asks how the examples we select influence what a model
-      recognizes. We want to examine whether its predictions change when the
-      background, lighting, or position of an object changes. This connects to
-      our course discussions about the human choices behind automated systems.</p>
-      <p><a href="https://teachablemachine.withgoogle.com/models/scoxiocVK/">
-        Open our model on Teachable Machine
-      </a></p>
+      <h2>How Our Model Works</h2>
+
+      <p>
+        We trained this image classifier using Google Teachable Machine
+        and connected the exported model to our LIS 500 website.
+        The webpage adapts the Coding Train example to show a live
+        camera image and its predicted label.
+      </p>
+
+      <h3>What are we trying to learn?</h3>
+
+      <p>
+        Our experiment looks at how the images we select influence
+        what a machine recognizes. We want to see if its predictions
+        change when the background, lighting, or position of an
+        object changes.
+      </p>
+
+      <p>
+        This connects to our course discussions about the human
+        choices behind automated systems and how those choices
+        can influence their results.
+      </p>
+
+      <p>
+        <a href="https://teachablemachine.withgoogle.com/models/scoxiocVK/">
+          Explore our model on Google Teachable Machine
+        </a>
+      </p>
     </section>
 
     <section class="guide-section">
-  <h2>Dataset and group contributions</h2>
+      <h2>How We Trained Our Model</h2>
 
-  <p>
-    We collected 240 original training images. Adi contributed
-    40 mug images, 40 bottle images, and 40 empty-scene images.
-    Jake contributed the same amounts. Each member contributed
-    120 images, giving us 80 images per class.
-  </p>
+      <p>
+        We collected 240 original training images, with 80 images
+        for each of our three categories.
+      </p>
 
-  <!-- AG / JD: Our original training images are shared through
-       Google Drive so visitors can access the dataset. -->
-  <p>
-    <a href="https://drive.google.com/drive/folders/1vc2Lav2NDnn2ZhAe6yAU0X210KGFBANE?usp=drive_link">
-      View and download our original training dataset — 240 images
-    </a>
-  </p>
-</section>
+      <h3>Group contributions</h3>
 
-    <section class="guide-section">
-  <h2>Demonstration video</h2>
+      <ul class="spaced-list">
+        <li>
+          <strong>Adi:</strong> 40 mug images, 40 bottle images,
+          and 40 empty-scene images.
+        </li>
+        <li>
+          <strong>Jake:</strong> 40 mug images, 40 bottle images,
+          and 40 empty-scene images.
+        </li>
+      </ul>
 
-  <p>
-    Watch a screen recording of our Teachable Machine classifier in use.
-  </p>
+      <p>
+        Each group member contributed 120 images, giving us
+        a total of 240 training images.
+      </p>
 
-  <!-- AG / JD: YouTube hosts our recording, while the shared
-       stylesheet makes the embedded player fit different screens. -->
-  <iframe
-    class="tm-video"
-    src="https://www.youtube.com/embed/yE4zxQDdJcA"
-    title="Adi and Jake's LIS 500 Teachable Machine demonstration"
-    loading="lazy"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
+      <h3>View our training images</h3>
 
-  <p>
-    <a href="https://youtu.be/yE4zxQDdJcA">
-      Watch our demonstration on YouTube
-    </a>
-  </p>
-</section>
+      <p>
+        You can explore the original images we used to teach
+        our machine by following the link below.
+      </p>
+
+      <!-- AG / JD: Our original training images are shared through Google Drive. -->
+
+      <p>
+        <a href="https://drive.google.com/drive/folders/1vc2Lav2NDnn2ZhAe6yAU0X210KGFBANE?usp=drive_link">
+          View and download our training dataset (240 images)
+        </a>
+      </p>
+    </section>
 
     <section class="guide-section">
-      <h2>Code and references</h2>
+      <h2>Watch Our Model in Action</h2>
+
+      <p>
+        Watch our demonstration below to see how the model
+        makes predictions when different objects are shown
+        to the camera.
+      </p>
+
+      <!-- AG / JD: The shared stylesheet makes the video fit different screens. -->
+
+      <iframe
+        class="tm-video"
+        src="https://www.youtube.com/embed/yE4zxQDdJcA"
+        title="Adi and Jake's LIS 500 Teachable Machine demonstration"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+      <p>
+        <a href="https://youtu.be/yE4zxQDdJcA">
+          Watch our demonstration on YouTube
+        </a>
+      </p>
+    </section>
+
+    <section class="guide-section">
+      <h2>Explore Our Code and Sources</h2>
+
+      <h3>Our project files</h3>
+
       <ul class="resource-list">
-        <li><a href="https://github.com/jakederfel/LIS500">Our website code on GitHub</a></li>
-        <li><a href="sketch.js">Our classifier JavaScript</a></li>
-        <li><a href="https://teachablemachine.withgoogle.com/models/scoxiocVK/">Our exported Teachable Machine model</a></li>
-        <li><a href="https://thecodingtrain.com/tracks/teachable-machine/teachable-machine/1-image-classification">The Coding Train: Image Classification</a></li>
-        <li><a href="https://editor.p5js.org/codingtrain/sketches/PoZXqbu4v">Daniel Shiffman's sample code</a></li>
-        <li><a href="https://www.unmasking.ai/">Joy Buolamwini: Unmasking AI</a></li>
+        <li>
+          <a href="https://github.com/jakederfel/LIS500">
+            Our website code on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="sketch.js">Our classifier JavaScript</a>
+        </li>
+        <li>
+          <a href="https://teachablemachine.withgoogle.com/models/scoxiocVK/">
+            Our exported Teachable Machine model
+          </a>
+        </li>
       </ul>
+
+      <h3>Tutorials and references</h3>
+
+      <ul class="resource-list">
+        <li>
+          <a href="https://thecodingtrain.com/tracks/teachable-machine/teachable-machine/1-image-classification">
+            The Coding Train: Image Classification
+          </a>
+        </li>
+        <li>
+          <a href="https://editor.p5js.org/codingtrain/sketches/PoZXqbu4v">
+            Daniel Shiffman's sample code
+          </a>
+        </li>
+        <li>
+          <a href="https://www.unmasking.ai/">
+            Joy Buolamwini: Unmasking AI
+          </a>
+        </li>
+      </ul>
+
+      <p><a href="#main-content">Back to top</a></p>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -171,5 +310,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
   <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
   <script src="sketch.js?v=tm1"></script>
+
 </body>
 </html>
